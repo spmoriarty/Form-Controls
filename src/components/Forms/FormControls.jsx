@@ -37,3 +37,15 @@ export function SelectControl({ label, children, placeholder, ...rest }) {
     </FormController>
   );
 }
+
+export function CheckBoxController({ legend, label, ...rest }) {
+  return (
+    <fieldset className={styles.CheckBoxController}>
+      <legend className={styles.LabelText}>{legend}</legend>
+      <label>
+        <input type="checkbox" {...rest}/>
+        {label}
+      </label>
+    </fieldset>
+  );
+}
