@@ -20,10 +20,20 @@ export function InputController({ label, ...rest }) {
 }
 
 export function TextAreaControl({ label, ...rest }) {
-  console.log(rest);
   return (
     <FormController label={label}>
       <textarea {...rest}/>
+    </FormController>
+  );
+}
+export function SelectControl({ label, children, placeholder, ...rest }) {
+    
+  return (
+    <FormController label={label}>
+      <select {...rest}>
+        {placeholder && <option disabled>{placeholder}</option>}
+        {children}
+      </select>
     </FormController>
   );
 }
